@@ -30,22 +30,20 @@
         columna.style.height=('10px');
         columna.style.margin=('1em');
 
+	// change color 
         columna.addEventListener('click',cambiocolor);
-
         function cambiocolor(){
             if(columna.style.backgroundColor==('green')){
-            columna.style.backgroundColor=('red');
+            		columna.style.backgroundColor=('red');
+            		texto.value++;
+        	}else
+            		columna.style.backgroundColor=('green');
+            		if(columna.style.backgroundColor==('green'))
+            			texto.value--;
 
-            //if(columna.style.backgroundColor==('red'))
-            texto.value++;
-        }else
-            columna.style.backgroundColor=('green');
-            if(columna.style.backgroundColor==('green'))
-            texto.value--;
-
-        }
+        	}
         limpiar.addEventListener('click',reiniciar);
-
+// clean all the red squares
         function reiniciar(){
             columna.style.backgroundColor=('green');
             texto.value=0;
