@@ -6,47 +6,47 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>RESERVAS DE CINE CARLOS III</h1>
+    <h1>MOVIE RESERVATIONS CARLOS III</h1>
     <div id="contenedor">
     </div><br>
-    <label>Total de reservas</label>
-    <input type="text" id="texto" readonly>
-    <button id="limpiar">limpiar</button>
+    <label>Total reservations</label>
+    <input type="text" id="text" readonly>
+    <button id="clean">clean</button>
     <script>
-        let contenedor = document.getElementById('contenedor');
-        let limpiar = document.getElementById('limpiar');
+        let container = document.getElementById('container');
+        let clean = document.getElementById('clean');
 
-	let tabla = contenedor.appendChild(document.createElement('table'));
+	let table = container.appendChild(document.createElement('table'));
 
         for(i=0;i<=10;i++){
-        let fila = tabla.appendChild(document.createElement("tr"));
+        let row = table.appendChild(document.createElement("tr"));
 
 
         for(j=0;j<=20;j++){
-        let columna = fila.appendChild(document.createElement("td"));
-        columna.style.backgroundColor=('green');
-        columna.style.border=('solid black 0.1em');
-        columna.style.width=('10px');
-        columna.style.height=('10px');
-        columna.style.margin=('1em');
+        let column = row.appendChild(document.createElement("td"));
+        column.style.backgroundColor=('green');
+        column.style.border=('solid black 0.1em');
+        column.style.width=('10px');
+        column.style.height=('10px');
+        column.style.margin=('1em');
 
 	// change color 
-        columna.addEventListener('click',cambiocolor);
-        function cambiocolor(){
-            if(columna.style.backgroundColor==('green')){
-            		columna.style.backgroundColor=('red');
-            		texto.value++;
+        column.addEventListener('click',changecolor);
+        function changecolor(){
+            if(column.style.backgroundColor==('green')){
+            		column.style.backgroundColor=('red');
+            		text.value++;
         	}else
-            		columna.style.backgroundColor=('green');
-            		if(columna.style.backgroundColor==('green'))
-            			texto.value--;
+            		column.style.backgroundColor=('green');
+            		if(column.style.backgroundColor==('green'))
+            			text.value--;
 
         	}
-        limpiar.addEventListener('click',reiniciar);
+        clean.addEventListener('click',restart);
 // clean all the red squares
-        function reiniciar(){
-            columna.style.backgroundColor=('green');
-            texto.value=0;
+        function restart(){
+            column.style.backgroundColor=('green');
+            text.value=0;
         }
         }
 }
