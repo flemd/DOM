@@ -1,3 +1,0 @@
-# DOM
-
-a javascript code 
